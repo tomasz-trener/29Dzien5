@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace P03ZawodnicyCRUD
 {
-    internal class ManagerZawodnikow
+    public class ManagerZawodnikow
     {
         private Zawodnik[] zawodnicyCache; 
         public Zawodnik[] WczytajZawodnikow()

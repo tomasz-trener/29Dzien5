@@ -24,5 +24,6 @@ namespace P08ZadanieFiltorwanieDanych
             numWzrost.Value = zawodnik.Wzrost;
             numWaga.Value = zawodnik.Waga;
         }
+       
     }
 }

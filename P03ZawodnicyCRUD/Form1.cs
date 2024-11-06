@@ -60,7 +60,7 @@ namespace P03ZawodnicyCRUD
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
             Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik);
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, mz);
             frmSzczegoly.Show();
         }
     }

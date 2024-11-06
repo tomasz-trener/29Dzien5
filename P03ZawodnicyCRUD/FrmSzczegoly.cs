@@ -13,9 +13,14 @@ namespace P08ZadanieFiltorwanieDanych
 {
     public partial class FrmSzczegoly : Form
     {
-        public FrmSzczegoly(Zawodnik zawodnik)
+        Zawodnik zawodnik;
+        ManagerZawodnikow mz;
+        public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz)
         {
             InitializeComponent();
+
+            this.zawodnik = zawodnik;
+            this.mz = mz;
 
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
@@ -23,6 +28,19 @@ namespace P08ZadanieFiltorwanieDanych
             dtpDataUr.Value = zawodnik.DataUrodzenia;
             numWzrost.Value = zawodnik.Wzrost;
             numWaga.Value = zawodnik.Waga;
+        }
+
+
+        private void btnZapisz_Click(object sender, EventArgs e)
+        {
+            zawodnik.Imie = txtImie.Text;
+            zawodnik.Nazwisko = txtNazwisko.Text;
+            zawodnik.Kraj = txtKraj.Text;
+            zawodnik.DataUrodzenia = dtpDataUr.Value;
+            zawodnik.Waga = Convert.ToInt32(numWaga.Value);
+            zawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
+
+            mz.Zapisz();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -7,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace P03ZawodnicyCRUD
 {
-    internal class ManagerZawodnikow
+    public class ManagerZawodnikow
     {
-        private Zawodnik[] zawodnicyCache; 
+        private Zawodnik[] zawodnicyCache;
+        string url = @"c:\dane\zawodnicy.txt";
         public Zawodnik[] WczytajZawodnikow()
         {
-            string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
+            //string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
 
             WebClient wc = new WebClient();
             string dane = wc.DownloadString(url);
@@ -99,6 +101,25 @@ namespace P03ZawodnicyCRUD
                 suma += zawodnik.Wzrost;
 
             return suma / zawodnicy.Length;
+        }
+
+        // Zaczynamy od zrobienia metody zapisz 
+        // ta metoda powinna zapisywać do pliku stan aktualny naszych zawodnikow 
+        public void Zapisz()
+        {
+            const string naglowek = "id_zawodnika;id_trenera;imie;nazwisko;kraj;data urodzenia;wzrost;waga";
+            const string szablon = "{0};{1};{2};{3};{4};{5};{6};{7}";
+
+            StringBuilder sb = new StringBuilder(naglowek + Environment.NewLine);
+            foreach (var z in zawodnicyCache)
+            {
+                string wiersz = string.Format(szablon,
+                    z.Id_zawodnika, z.Id_trenera, z.Imie, z.Nazwisko,
+                    z.Kraj, z.DataUrodzenia.ToString("yyyy-MM-dd"),
+                    z.Wzrost, z.Waga);
+                sb.AppendLine(wiersz);
+            }
+            File.WriteAllText(url, sb.ToString(), Encoding.UTF8);
         }
     }
 }
