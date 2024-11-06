@@ -5,7 +5,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P03ZawodnicyCRUD
+namespace P06ZawodnicyPDF
 {
     public class ManagerZawodnikow
     {

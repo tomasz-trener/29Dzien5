@@ -1,6 +1,6 @@
 ﻿namespace P06ZawodnicyPDF
 {
-    partial class Form1
+    partial class FrmStartowy
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,10 @@
             this.cbKraje = new System.Windows.Forms.ComboBox();
             this.lblRaportWzrost = new System.Windows.Forms.Label();
             this.btnSzczegoly = new System.Windows.Forms.Button();
+            this.btnNowy = new System.Windows.Forms.Button();
+            this.btnPodglad = new System.Windows.Forms.Button();
+            this.btnGenerujPDF = new System.Windows.Forms.Button();
+            this.wbPrzegladrka = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // lbDane
@@ -91,18 +95,60 @@
             this.btnSzczegoly.UseVisualStyleBackColor = true;
             this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
             // 
-            // Form1
+            // btnNowy
+            // 
+            this.btnNowy.Location = new System.Drawing.Point(182, 68);
+            this.btnNowy.Name = "btnNowy";
+            this.btnNowy.Size = new System.Drawing.Size(102, 23);
+            this.btnNowy.TabIndex = 7;
+            this.btnNowy.Text = "Nowy";
+            this.btnNowy.UseVisualStyleBackColor = true;
+            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
+            // 
+            // btnPodglad
+            // 
+            this.btnPodglad.Location = new System.Drawing.Point(183, 98);
+            this.btnPodglad.Name = "btnPodglad";
+            this.btnPodglad.Size = new System.Drawing.Size(101, 23);
+            this.btnPodglad.TabIndex = 8;
+            this.btnPodglad.Text = "Podgląd";
+            this.btnPodglad.UseVisualStyleBackColor = true;
+            this.btnPodglad.Click += new System.EventHandler(this.btnPodglad_Click);
+            // 
+            // btnGenerujPDF
+            // 
+            this.btnGenerujPDF.Location = new System.Drawing.Point(182, 127);
+            this.btnGenerujPDF.Name = "btnGenerujPDF";
+            this.btnGenerujPDF.Size = new System.Drawing.Size(101, 23);
+            this.btnGenerujPDF.TabIndex = 9;
+            this.btnGenerujPDF.Text = "Raport PDF";
+            this.btnGenerujPDF.UseVisualStyleBackColor = true;
+            this.btnGenerujPDF.Click += new System.EventHandler(this.btnGenerujPDF_Click);
+            // 
+            // wbPrzegladrka
+            // 
+            this.wbPrzegladrka.Location = new System.Drawing.Point(289, 12);
+            this.wbPrzegladrka.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbPrzegladrka.Name = "wbPrzegladrka";
+            this.wbPrzegladrka.Size = new System.Drawing.Size(214, 302);
+            this.wbPrzegladrka.TabIndex = 10;
+            // 
+            // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 326);
+            this.ClientSize = new System.Drawing.Size(517, 326);
+            this.Controls.Add(this.wbPrzegladrka);
+            this.Controls.Add(this.btnGenerujPDF);
+            this.Controls.Add(this.btnPodglad);
+            this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.btnSzczegoly);
             this.Controls.Add(this.lblRaportWzrost);
             this.Controls.Add(this.cbKraje);
             this.Controls.Add(this.lblRaport);
             this.Controls.Add(this.btnTemperatuara);
             this.Controls.Add(this.lbDane);
-            this.Name = "Form1";
+            this.Name = "FrmStartowy";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,6 +163,10 @@
         private System.Windows.Forms.ComboBox cbKraje;
         private System.Windows.Forms.Label lblRaportWzrost;
         private System.Windows.Forms.Button btnSzczegoly;
+        private System.Windows.Forms.Button btnNowy;
+        private System.Windows.Forms.Button btnPodglad;
+        private System.Windows.Forms.Button btnGenerujPDF;
+        private System.Windows.Forms.WebBrowser wbPrzegladrka;
     }
 }
 

@@ -1,4 +1,4 @@
-﻿using P03ZawodnicyCRUD;
+﻿using P06ZawodnicyPDF;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
