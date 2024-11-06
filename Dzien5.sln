@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02ZawodnicyNoweOkna", "P02
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03ZawodnicyCRUD", "P03ZawodnicyCRUD\P03ZawodnicyCRUD.csproj", "{8766E394-6890-45AD-A8CC-B7E289D2CFD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03ZawodnicyCRUDKonwersjaNull", "P03ZawodnicyCRUDKonwersjaNull\P03ZawodnicyCRUDKonwersjaNull.csproj", "{CDA551E3-45AF-4521-B33B-256A2B97BB44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8766E394-6890-45AD-A8CC-B7E289D2CFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8766E394-6890-45AD-A8CC-B7E289D2CFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8766E394-6890-45AD-A8CC-B7E289D2CFD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA551E3-45AF-4521-B33B-256A2B97BB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA551E3-45AF-4521-B33B-256A2B97BB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA551E3-45AF-4521-B33B-256A2B97BB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA551E3-45AF-4521-B33B-256A2B97BB44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

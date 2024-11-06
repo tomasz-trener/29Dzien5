@@ -118,6 +118,7 @@ namespace P03ZawodnicyCRUD
             const string naglowek = "id_zawodnika;id_trenera;imie;nazwisko;kraj;data urodzenia;wzrost;waga";
             const string szablon = "{0};{1};{2};{3};{4};{5};{6};{7}";
 
+            
             StringBuilder sb = new StringBuilder(naglowek + Environment.NewLine);
             foreach (var z in zawodnicyCache)
             {
@@ -142,6 +143,17 @@ namespace P03ZawodnicyCRUD
                 }   
             }
             zawodnicyCache.Remove(zawodnikDoUsuniecia);
+        }
+
+        internal void Dodaj(Zawodnik zawodnik)
+        {
+            int maksId = 0;
+            foreach (var z in zawodnicyCache)
+                if(z.Id_zawodnika>maksId)
+                    maksId= z.Id_zawodnika;
+
+            zawodnik.Id_zawodnika= maksId+1;
+            zawodnicyCache.Add(zawodnik);
         }
     }
 }

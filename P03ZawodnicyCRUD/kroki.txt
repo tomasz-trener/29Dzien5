@@ -4,4 +4,9 @@
 
 4) W manager zawodnikow zmianimy z tablicy na listê 
   poniewaz bedziemy dodawac i usuwac elementy 
+5) Dodanie metody do usuwania w managerZawodnikow
+6) Wywolanie odswiezenia krajów a przy okazji odswiezenie krajów wywoluje zmiane zaznaczonego indekstu, co przy okazji odswieza
+    listbox Zawodnikow 
+
+
 

@@ -11,18 +11,26 @@ using System.Windows.Forms;
 
 namespace P08ZadanieFiltorwanieDanych
 {
+    public enum TrybOkienka
+    {
+        Dodawanie,
+        Edycja,
+        Podglad
+    }
     public partial class FrmSzczegoly : Form
     {
         Zawodnik wyswietlanyZawodnik;
         ManagerZawodnikow mz;
         FrmStartowy frmStartowy;
-        public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz, FrmStartowy frmStartowy )
+        TrybOkienka trybOkienka;
+        public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz, FrmStartowy frmStartowy, TrybOkienka trybOkienka )
         {
             InitializeComponent();
 
             this.wyswietlanyZawodnik = zawodnik;
             this.mz = mz;
             this.frmStartowy = frmStartowy;
+            this.trybOkienka = trybOkienka;
 
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
@@ -35,14 +43,32 @@ namespace P08ZadanieFiltorwanieDanych
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
+            if(trybOkienka == TrybOkienka.Edycja)
+            {
+                zczytajDaneZkontrolek();
+                mz.Zapisz();
+                this.Close();
+                frmStartowy.Odswiez();
+            }
+            else if(trybOkienka== TrybOkienka.Dodawanie)
+            {
+                zczytajDaneZkontrolek();
+                mz.Dodaj(wyswietlanyZawodnik);
+                mz.Zapisz();
+                this.Close();
+                frmStartowy.Odswiez();
+            }
+           
+        }
+
+        private void zczytajDaneZkontrolek()
+        {
             wyswietlanyZawodnik.Imie = txtImie.Text;
             wyswietlanyZawodnik.Nazwisko = txtNazwisko.Text;
             wyswietlanyZawodnik.Kraj = txtKraj.Text;
             wyswietlanyZawodnik.DataUrodzenia = dtpDataUr.Value;
             wyswietlanyZawodnik.Waga = Convert.ToInt32(numWaga.Value);
             wyswietlanyZawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
-
-            mz.Zapisz();
         }
 
         private void btnUsun_Click(object sender, EventArgs e)

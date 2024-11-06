@@ -34,6 +34,7 @@
             this.cbKraje = new System.Windows.Forms.ComboBox();
             this.lblRaportWzrost = new System.Windows.Forms.Label();
             this.btnSzczegoly = new System.Windows.Forms.Button();
+            this.btnNowy = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbDane
@@ -91,18 +92,29 @@
             this.btnSzczegoly.UseVisualStyleBackColor = true;
             this.btnSzczegoly.Click += new System.EventHandler(this.btnSzczegoly_Click);
             // 
-            // Form1
+            // btnNowy
+            // 
+            this.btnNowy.Location = new System.Drawing.Point(182, 68);
+            this.btnNowy.Name = "btnNowy";
+            this.btnNowy.Size = new System.Drawing.Size(102, 23);
+            this.btnNowy.TabIndex = 7;
+            this.btnNowy.Text = "Nowy";
+            this.btnNowy.UseVisualStyleBackColor = true;
+            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
+            // 
+            // FrmStartowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(297, 326);
+            this.Controls.Add(this.btnNowy);
             this.Controls.Add(this.btnSzczegoly);
             this.Controls.Add(this.lblRaportWzrost);
             this.Controls.Add(this.cbKraje);
             this.Controls.Add(this.lblRaport);
             this.Controls.Add(this.btnTemperatuara);
             this.Controls.Add(this.lbDane);
-            this.Name = "Form1";
+            this.Name = "FrmStartowy";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,6 +129,7 @@
         private System.Windows.Forms.ComboBox cbKraje;
         private System.Windows.Forms.Label lblRaportWzrost;
         private System.Windows.Forms.Button btnSzczegoly;
+        private System.Windows.Forms.Button btnNowy;
     }
 }
 

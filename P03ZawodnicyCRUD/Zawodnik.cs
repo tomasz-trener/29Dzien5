@@ -24,8 +24,23 @@ namespace P03ZawodnicyCRUD
         //        return Imie + " " + Nazwisko;
         //    }
         //}
-        public string ImieNazwisko => Imie + " " + Nazwisko[0] + Nazwisko.Substring(1).ToLower();
+        public string ImieNazwisko
+        {
+            get
+            {
+                string imieNazwisko = Imie;
+                if (Nazwisko.Length == 1)
+                {
+                    imieNazwisko += " " + Nazwisko[0];
+                }
+                else if (Nazwisko.Length > 1)
+                {
+                    imieNazwisko += " " + Nazwisko[0] + Nazwisko.Substring(1).ToLower();
+                }
+                return imieNazwisko;
 
+            }
+        } 
 
 
     }
