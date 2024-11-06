@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01NoweOkna", "P01NoweOkna\P01NoweOkna.csproj", "{2A64A9B9-E72B-4423-80F6-B0C7B6C711B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02ZawodnicyNoweOkna", "P02ZawodnicyNoweOkna\P02ZawodnicyNoweOkna.csproj", "{8BB77B6A-261E-41C4-8495-9CB48D5CF975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2A64A9B9-E72B-4423-80F6-B0C7B6C711B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A64A9B9-E72B-4423-80F6-B0C7B6C711B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A64A9B9-E72B-4423-80F6-B0C7B6C711B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB77B6A-261E-41C4-8495-9CB48D5CF975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB77B6A-261E-41C4-8495-9CB48D5CF975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB77B6A-261E-41C4-8495-9CB48D5CF975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB77B6A-261E-41C4-8495-9CB48D5CF975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
