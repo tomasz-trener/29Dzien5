@@ -1,4 +1,4 @@
-﻿using P06ZawodnicyPDF;
+﻿using P07ZawodnicyDynamiczneKolumny;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

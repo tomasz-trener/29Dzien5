@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace P06ZawodnicyPDF
+namespace P07ZawodnicyDynamiczneKolumny
 {
     public partial class Form1 : Form
     {
