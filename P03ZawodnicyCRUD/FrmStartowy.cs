@@ -1,4 +1,6 @@
-﻿using P08ZadanieFiltorwanieDanych;
+﻿using P04Zawodnicy.Shared.Domains;
+using P04Zawodnicy.Shared.Services;
+using P08ZadanieFiltorwanieDanych;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

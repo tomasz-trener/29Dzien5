@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P03ZawodnicyCRUD
+namespace P04Zawodnicy.Shared.Domains
 {
     public class Zawodnik
     {
@@ -40,7 +40,7 @@ namespace P03ZawodnicyCRUD
                 return imieNazwisko;
 
             }
-        } 
+        }
 
 
     }

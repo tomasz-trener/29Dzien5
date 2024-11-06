@@ -8,5 +8,8 @@
 6) Wywolanie odswiezenia krajów a przy okazji odswiezenie krajów wywoluje zmiane zaznaczonego indekstu, co przy okazji odswieza
     listbox Zawodnikow 
 
+7) Implementcja opcji dodawania zawodników  
 
-
+8) Dodanie opcji podgl¹du 
+ - iteracja po kontrolkach 
+ - dodanie alternatywnych konstruktorów 

@@ -58,11 +58,8 @@
     <Compile Include="FrmSzczegoly.Designer.cs">
       <DependentUpon>FrmSzczegoly.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerPogody.cs" />
-    <Compile Include="ManagerZawodnikow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Zawodnik.cs" />
     <EmbeddedResource Include="FrmStartowy.resx">
       <DependentUpon>FrmStartowy.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +91,12 @@
   <ItemGroup>
     <Content Include="kroki.txt" />
     <Content Include="wyglad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\P04Zawodnicy.Shared\P04Zawodnicy.Shared.csproj">
+      <Project>{f4df1c74-4141-4c64-bb13-1192660e00b4}</Project>
+      <Name>P04Zawodnicy.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,9 +5,9 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P03ZawodnicyCRUD
+namespace P04Zawodnicy.Shared.Services
 {
-    enum Jednostka
+    public enum Jednostka
     {
         Celsjusz,
         Kelvin,
@@ -15,7 +15,7 @@ namespace P03ZawodnicyCRUD
     }
 
 
-    internal class ManagerPogody
+    public class ManagerPogody
     {
         // string szukanyZnak = "°";
         private string znakKoncowy = ">";

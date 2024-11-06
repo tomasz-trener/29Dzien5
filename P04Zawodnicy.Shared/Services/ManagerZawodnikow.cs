@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P04Zawodnicy.Shared.Domains;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P03ZawodnicyCRUD
+namespace P04Zawodnicy.Shared.Services
 {
     public class ManagerZawodnikow
     {
@@ -14,7 +15,7 @@ namespace P03ZawodnicyCRUD
         //private Zawodnik[] zawodnicyCache;
         private List<Zawodnik> zawodnicyCache;
         string url = @"c:\dane\zawodnicy.txt";
-        public List<Zawodnik>  WczytajZawodnikow()
+        public List<Zawodnik> WczytajZawodnikow()
         {
             //string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
 
@@ -44,7 +45,7 @@ namespace P03ZawodnicyCRUD
 
                 //zawodnicy[i - 1] = z;
                 zawodnicy.Add(z);
-                
+
             }
             zawodnicyCache = zawodnicy;
             return zawodnicy;
@@ -56,8 +57,8 @@ namespace P03ZawodnicyCRUD
             //   Zawodnik[] zawodnicy = WczytajZawodnikow();
             if (zawodnicyCache == null)
                 throw new Exception("Najpierw wczytaj zawodnikow");
-            
-             //  Zawodnik[] zawodnicy = zawodnicyCache;
+
+            //  Zawodnik[] zawodnicy = zawodnicyCache;
             List<Zawodnik> zawodnicy = zawodnicyCache;
 
 
@@ -67,7 +68,7 @@ namespace P03ZawodnicyCRUD
 
             List<string> posortowaneKraje = kraje.ToList();
             posortowaneKraje.Sort(); // sortowanie alfabetyczne 
-//            posortowaneKraje.Reverse(); // ewentualnie mozna odwrocic kolejnosc 
+                                     //            posortowaneKraje.Reverse(); // ewentualnie mozna odwrocic kolejnosc 
 
             return posortowaneKraje.ToArray();
 
@@ -76,8 +77,8 @@ namespace P03ZawodnicyCRUD
         public Zawodnik[] PodajZawodnikow(string kraj)
         {
             List<Zawodnik> zawodnicy = new List<Zawodnik>();
-            foreach (var z in zawodnicyCache )
-                if(z.Kraj == kraj)
+            foreach (var z in zawodnicyCache)
+                if (z.Kraj == kraj)
                     zawodnicy.Add(z);
 
             posrotujZawodnikowPoNazwisku(zawodnicy);
@@ -86,15 +87,15 @@ namespace P03ZawodnicyCRUD
 
         private void posrotujZawodnikowPoNazwisku(List<Zawodnik> zawodnicy)
         {
-            for (int i = 0; i < zawodnicy.Count-1; i++)
+            for (int i = 0; i < zawodnicy.Count - 1; i++)
             {
-                for (int j = 0; j < zawodnicy.Count-1-i; j++)
+                for (int j = 0; j < zawodnicy.Count - 1 - i; j++)
                 {
-                    if (string.Compare(zawodnicy[j].Nazwisko, zawodnicy[j+1].Nazwisko) > 0)
+                    if (string.Compare(zawodnicy[j].Nazwisko, zawodnicy[j + 1].Nazwisko) > 0)
                     {
                         Zawodnik temp = zawodnicy[j];
-                        zawodnicy[j] = zawodnicy[j+1];
-                        zawodnicy[j+1] = temp;
+                        zawodnicy[j] = zawodnicy[j + 1];
+                        zawodnicy[j + 1] = temp;
                     }
                 }
             }
@@ -118,7 +119,7 @@ namespace P03ZawodnicyCRUD
             const string naglowek = "id_zawodnika;id_trenera;imie;nazwisko;kraj;data urodzenia;wzrost;waga";
             const string szablon = "{0};{1};{2};{3};{4};{5};{6};{7}";
 
-            
+
             StringBuilder sb = new StringBuilder(naglowek + Environment.NewLine);
             foreach (var z in zawodnicyCache)
             {
@@ -136,23 +137,23 @@ namespace P03ZawodnicyCRUD
             Zawodnik zawodnikDoUsuniecia = null;
             foreach (var z in zawodnicyCache)
             {
-                if(z.Id_zawodnika == id)
+                if (z.Id_zawodnika == id)
                 {
                     zawodnikDoUsuniecia = z;
                     break;
-                }   
+                }
             }
             zawodnicyCache.Remove(zawodnikDoUsuniecia);
         }
 
-        internal void Dodaj(Zawodnik zawodnik)
+        public void Dodaj(Zawodnik zawodnik)
         {
             int maksId = 0;
             foreach (var z in zawodnicyCache)
-                if(z.Id_zawodnika>maksId)
-                    maksId= z.Id_zawodnika;
+                if (z.Id_zawodnika > maksId)
+                    maksId = z.Id_zawodnika;
 
-            zawodnik.Id_zawodnika= maksId+1;
+            zawodnik.Id_zawodnika = maksId + 1;
             zawodnicyCache.Add(zawodnik);
         }
     }
