@@ -10,9 +10,11 @@ namespace P03ZawodnicyCRUD
 {
     public class ManagerZawodnikow
     {
-        private Zawodnik[] zawodnicyCache;
+
+        //private Zawodnik[] zawodnicyCache;
+        private List<Zawodnik> zawodnicyCache;
         string url = @"c:\dane\zawodnicy.txt";
-        public Zawodnik[] WczytajZawodnikow()
+        public List<Zawodnik>  WczytajZawodnikow()
         {
             //string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
 
@@ -20,7 +22,9 @@ namespace P03ZawodnicyCRUD
             string dane = wc.DownloadString(url);
 
             string[] wiersze = dane.Split(new string[1] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-            Zawodnik[] zawodnicy = new Zawodnik[wiersze.Length - 1];
+            // Zawodnik[] zawodnicy = new Zawodnik[wiersze.Length - 1];
+            List<Zawodnik> zawodnicy = new List<Zawodnik>();
+
 
             for (int i = 1; i < wiersze.Length; i++)
             {
@@ -38,7 +42,9 @@ namespace P03ZawodnicyCRUD
                 z.Wzrost = Convert.ToInt32(komorki[6]);
                 z.Waga = Convert.ToInt32(komorki[7]);
 
-                zawodnicy[i - 1] = z;
+                //zawodnicy[i - 1] = z;
+                zawodnicy.Add(z);
+                
             }
             zawodnicyCache = zawodnicy;
             return zawodnicy;
@@ -51,7 +57,9 @@ namespace P03ZawodnicyCRUD
             if (zawodnicyCache == null)
                 throw new Exception("Najpierw wczytaj zawodnikow");
             
-            Zawodnik[] zawodnicy = zawodnicyCache;
+             //  Zawodnik[] zawodnicy = zawodnicyCache;
+            List<Zawodnik> zawodnicy = zawodnicyCache;
+
 
             HashSet<string> kraje = new HashSet<string>();
             foreach (var z in zawodnicy)
@@ -120,6 +128,20 @@ namespace P03ZawodnicyCRUD
                 sb.AppendLine(wiersz);
             }
             File.WriteAllText(url, sb.ToString(), Encoding.UTF8);
+        }
+
+        public void Usun(int id)
+        {
+            Zawodnik zawodnikDoUsuniecia = null;
+            foreach (var z in zawodnicyCache)
+            {
+                if(z.Id_zawodnika == id)
+                {
+                    zawodnikDoUsuniecia = z;
+                    break;
+                }   
+            }
+            zawodnicyCache.Remove(zawodnikDoUsuniecia);
         }
     }
 }

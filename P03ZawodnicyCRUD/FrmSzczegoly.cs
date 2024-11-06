@@ -13,14 +13,16 @@ namespace P08ZadanieFiltorwanieDanych
 {
     public partial class FrmSzczegoly : Form
     {
-        Zawodnik zawodnik;
+        Zawodnik wyswietlanyZawodnik;
         ManagerZawodnikow mz;
-        public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz)
+        FrmStartowy frmStartowy;
+        public FrmSzczegoly(Zawodnik zawodnik, ManagerZawodnikow mz, FrmStartowy frmStartowy )
         {
             InitializeComponent();
 
-            this.zawodnik = zawodnik;
+            this.wyswietlanyZawodnik = zawodnik;
             this.mz = mz;
+            this.frmStartowy = frmStartowy;
 
             txtImie.Text = zawodnik.Imie;
             txtNazwisko.Text = zawodnik.Nazwisko;
@@ -33,14 +35,30 @@ namespace P08ZadanieFiltorwanieDanych
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            zawodnik.Imie = txtImie.Text;
-            zawodnik.Nazwisko = txtNazwisko.Text;
-            zawodnik.Kraj = txtKraj.Text;
-            zawodnik.DataUrodzenia = dtpDataUr.Value;
-            zawodnik.Waga = Convert.ToInt32(numWaga.Value);
-            zawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
+            wyswietlanyZawodnik.Imie = txtImie.Text;
+            wyswietlanyZawodnik.Nazwisko = txtNazwisko.Text;
+            wyswietlanyZawodnik.Kraj = txtKraj.Text;
+            wyswietlanyZawodnik.DataUrodzenia = dtpDataUr.Value;
+            wyswietlanyZawodnik.Waga = Convert.ToInt32(numWaga.Value);
+            wyswietlanyZawodnik.Wzrost = Convert.ToInt32(numWzrost.Value);
 
             mz.Zapisz();
+        }
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+           DialogResult dr= MessageBox.Show($"Czy napewno chcesz usunać zawodika {wyswietlanyZawodnik.ImieNazwisko} ?", "Usuwanie",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes) 
+            {
+                mz.Usun(wyswietlanyZawodnik.Id_zawodnika);
+                this.Close();
+                mz.Zapisz();
+                frmStartowy.Odswiez();
+
+            }
+
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace P03ZawodnicyCRUD
 {
-    partial class Form1
+    partial class FrmStartowy
     {
         /// <summary>
         /// Required designer variable.

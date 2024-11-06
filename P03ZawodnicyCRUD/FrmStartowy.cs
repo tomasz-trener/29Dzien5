@@ -11,10 +11,11 @@ using System.Windows.Forms;
 
 namespace P03ZawodnicyCRUD
 {
-    public partial class Form1 : Form
+    public partial class FrmStartowy : Form
     {
         ManagerZawodnikow mz = new ManagerZawodnikow();
-        public Form1()
+        
+        public FrmStartowy()
         {
             InitializeComponent();
 
@@ -22,6 +23,11 @@ namespace P03ZawodnicyCRUD
             cbKraje.DataSource = mz.PodajKraje();
         }
 
+        public void Odswiez()
+        {
+            mz.WczytajZawodnikow();
+            cbKraje.DataSource = mz.PodajKraje();
+        }
       
 
         private void btnTemperatuara_Click(object sender, EventArgs e)
@@ -60,7 +66,7 @@ namespace P03ZawodnicyCRUD
         private void btnSzczegoly_Click(object sender, EventArgs e)
         {
             Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, mz);
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, mz, this);
             frmSzczegoly.Show();
         }
     }

@@ -9,7 +9,8 @@ namespace P03ZawodnicyCRUD
 {
     public class ManagerZawodnikow
     {
-        private Zawodnik[] zawodnicyCache; 
+       
+        private Zawodnik[] zawodnicyCache;
         public Zawodnik[] WczytajZawodnikow()
         {
             string url = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
@@ -48,7 +49,7 @@ namespace P03ZawodnicyCRUD
             //   Zawodnik[] zawodnicy = WczytajZawodnikow();
             if (zawodnicyCache == null)
                 throw new Exception("Najpierw wczytaj zawodnikow");
-            
+
             Zawodnik[] zawodnicy = zawodnicyCache;
 
             HashSet<string> kraje = new HashSet<string>();

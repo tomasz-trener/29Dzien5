@@ -2,3 +2,6 @@
 2) zmiana url na plik loklany 
 3) Zczytywanie danych zawodnika z formularza i wywo³anie "zapisz"
 
+4) W manager zawodnikow zmianimy z tablicy na listê 
+  poniewaz bedziemy dodawac i usuwac elementy 
+
