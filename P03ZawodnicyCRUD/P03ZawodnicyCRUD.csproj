@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BB77B6A-261E-41C4-8495-9CB48D5CF975}</ProjectGuid>
+    <ProjectGuid>{8766E394-6890-45AD-A8CC-B7E289D2CFD4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>P08ZadanieFiltorwanieDanych</RootNamespace>
     <AssemblyName>P08ZadanieFiltorwanieDanych</AssemblyName>
