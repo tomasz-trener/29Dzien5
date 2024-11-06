@@ -71,13 +71,17 @@ namespace P03ZawodnicyCRUD
         }
 
         private void btnNowy_Click(object sender, EventArgs e)
-        {
-            Zawodnik z = new Zawodnik()
-            {
-                DataUrodzenia = DateTime.Now,
-            };
-            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(z, mz, this, TrybOkienka.Dodawanie);
+        {      
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(mz, this);
             frmSzczegoly.Show();
+        }
+
+        private void btnPodglad_Click(object sender, EventArgs e)
+        {
+            Zawodnik zawodnik = (Zawodnik)lbDane.SelectedItem;
+            FrmSzczegoly frmSzczegoly = new FrmSzczegoly(zawodnik, mz, this, TrybOkienka.Podglad);
+            frmSzczegoly.Show();
+
         }
     }
 }
